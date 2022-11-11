@@ -1,0 +1,12 @@
+# apiVersion: cert-manager.io/v1
+# kind: Certificate
+# metadata:
+#   name: example-tls-cert  #name of this object
+#   namespace: default #same namespace as 
+# spec:
+#   dnsNames:
+#     - chess-openings.ddns.net
+#   secretName: example-tls-cert
+#   issuerRef:
+#     name: letsencrypt
+#     kind: Issuer
