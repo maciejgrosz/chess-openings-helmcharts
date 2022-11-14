@@ -9,7 +9,7 @@ data:
     MONGODB_DATABASE: "openings"
     MONGODB_USERNAME: "root"
     MONGODB_PASSWORD: "pass"
-    MONGODB_HOSTNAME: "{{ .Release.Name }}-mongodb"
+    MONGODB_HOSTNAME: "{{ .Release.Name }}-mongodb" # to sealed secrets
     MONGODB_PORT: "27017"
 #file-like keys
   # application.properties: |
