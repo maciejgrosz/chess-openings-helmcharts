@@ -48,37 +48,37 @@ spec:
           env:
             - name: FLASK_APP
               valueFrom:  
-                configMapKeyRef:
+                secretKeyRef:
                   name: {{ .Values.configmap }}
                   key: FLASK_APP
             - name: FLASK_DEBUG
               valueFrom:  
-                configMapKeyRef:
+                secretKeyRef:
                   name: {{ .Values.configmap }}
                   key: FLASK_DEBUG                                  
             - name: MONGODB_DATABASE
               valueFrom:  
-                configMapKeyRef:
+                secretKeyRef:
                   name: {{ .Values.configmap }}
                   key: MONGODB_DATABASE                 
             - name: MONGODB_USERNAME
               valueFrom:  
-                configMapKeyRef:
+                secretKeyRef:
                   name: {{ .Values.configmap }}
                   key: MONGODB_USERNAME
             - name: MONGODB_PASSWORD
               valueFrom:  
-                configMapKeyRef:
+                secretKeyRef:
                   name: {{ .Values.configmap }}
                   key: MONGODB_PASSWORD
             - name: MONGODB_HOSTNAME
               valueFrom:  
-                configMapKeyRef:
+                secretKeyRef:
                   name: {{ .Values.configmap }}
                   key: MONGODB_HOSTNAME                                                    
             - name: MONGODB_PORT
               valueFrom:  
-                configMapKeyRef:
+                secretKeyRef:
                   name: {{ .Values.configmap }}
                   key: MONGODB_PORT
           resources:
