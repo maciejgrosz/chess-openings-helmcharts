@@ -247,7 +247,11 @@ controller:
 
     ## The annotations of the Ingress Controller service.
     annotations:
+      service.beta.kubernetes.io/do-loadbalancer-hostname: "maciejgroszyk.click"
       external-dns.alpha.kubernetes.io/hostname: "maciejgroszyk.click"
+      service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: “true”
+
+
 
 
     ## The extra labels of the service.
