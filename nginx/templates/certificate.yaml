@@ -5,7 +5,7 @@ metadata:
   namespace: default #same namespace as 
 spec:
   dnsNames:
-    - chess-openings.ddns.net
+    - maciejgroszyk.click
   secretName: example-tls-cert
   issuerRef:
     name: letsencrypt

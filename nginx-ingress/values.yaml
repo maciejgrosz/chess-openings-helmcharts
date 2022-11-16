@@ -246,7 +246,9 @@ controller:
     externalTrafficPolicy: Local
 
     ## The annotations of the Ingress Controller service.
-    annotations: {}
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: "maciejgroszyk.click"
+
 
     ## The extra labels of the service.
     extraLabels: {}
