@@ -63,7 +63,7 @@ ingress:
     - host: maciejgroszyk.click
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: 
    - secretName: example-tls-cert
      hosts:
