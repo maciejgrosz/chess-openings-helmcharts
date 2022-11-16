@@ -243,16 +243,13 @@ controller:
     type: LoadBalancer
 
     ## The externalTrafficPolicy of the service. The value Local preserves the client source IP.
-    externalTrafficPolicy: Cluster
+    externalTrafficPolicy: local
 
     ## The annotations of the Ingress Controller service.
     annotations:
-      service.beta.kubernetes.io/do-loadbalancer-hostname: "maciejgroszyk.click"
+      # service.beta.kubernetes.io/do-loadbalancer-hostname: "maciejgroszyk.click"
       external-dns.alpha.kubernetes.io/hostname: "maciejgroszyk.click"
-      service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: “true”
-
-
-
+      # service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: “true”
 
     ## The extra labels of the service.
     extraLabels: {}
