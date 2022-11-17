@@ -230,7 +230,7 @@ livenessProbe:
   httpGet:
     httpHeaders: []
     scheme: http
-  initialDelaySeconds: 0
+  initialDelaySeconds: 60
   periodSeconds: 10
   successThreshold: 1
   timeoutSeconds: 1
@@ -242,7 +242,7 @@ readinessProbe:
   httpGet:
     httpHeaders: []
     scheme: http
-  initialDelaySeconds: 0
+  initialDelaySeconds: 60
   periodSeconds: 10
   successThreshold: 1
   timeoutSeconds: 1
