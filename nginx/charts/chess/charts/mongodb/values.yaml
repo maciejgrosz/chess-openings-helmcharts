@@ -130,10 +130,10 @@ image:
 schedulerName: ""
 ## @param architecture MongoDB(&reg;) architecture (`standalone` or `replicaset`)
 ##
-architecture: standalone
+architecture: replicaset
 ## @param useStatefulSet Set to true to use a StatefulSet instead of a Deployment (only when `architecture=standalone`)
 ##
-useStatefulSet: true
+useStatefulSet: false
 ## MongoDB(&reg;) Authentication parameters
 ##
 auth:
@@ -1546,7 +1546,7 @@ hidden:
   ## @param hidden.replicaCount Number of hidden nodes (only when `architecture=replicaset`)
   ## Ignored when mongodb.architecture=standalone
   ##
-  replicaCount: 1
+  replicaCount: 2
   ## @param hidden.terminationGracePeriodSeconds Hidden Termination Grace Period
   ##
   terminationGracePeriodSeconds: ""
