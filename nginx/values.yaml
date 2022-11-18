@@ -1,20 +1,16 @@
 # Default values for nginx.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-
 replicaCount: 1
-
 image:
   repository: 644435390668.dkr.ecr.eu-west-2.amazonaws.com/maciej_groszyk_chess_nginx
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
-
+  tag: ""
 configmap: configmap-nginx
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -23,27 +19,24 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
-
 podAnnotations: {}
-
 podSecurityContext: {}
-  # fsGroup: 2000
+# fsGroup: 2000
 
 securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+# capabilities:
+#   drop:
+#   - ALL
+# readOnlyRootFilesystem: true
+# runAsNonRoot: true
+# runAsUser: 1000
 
 service:
   type: ClusterIP
   port: 80
-  
 ingress:
   enabled: true
-  annotations: 
+  annotations:
     external-dns.alpha.kubernetes.io/hostname: "maciejgroszyk.click"
     cert-manager.io/issuer: "letsencrypt"
     kubernetes.io/ingress.class: "nginx"
@@ -53,36 +46,34 @@ ingress:
     - host: maciejgroszyk.click
       http:
         paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: chess-ip #?
-              port:
-                number: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: chess-ip #?
+                port:
+                  number: 80
   hosts:
     - host: maciejgroszyk.click
       paths:
         - path: /
           pathType: Prefix
-  tls: 
-   - secretName: example-tls-cert
-     hosts:
-       - maciejgroszyk.click
+  tls:
+    - secretName: example-tls-cert
+      hosts:
+        - maciejgroszyk.click
   # tlsClusterIssuer: Issuer 
-  
-
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+# We usually recommend not to specify default resources and to leave this as a conscious
+# choice for the user. This also increases chances charts run on environments with little
+# resources, such as Minikube. If you do want to specify resources, uncomment the following
+# lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+# limits:
+#   cpu: 100m
+#   memory: 128Mi
+# requests:
+#   cpu: 100m
+#   memory: 128Mi
 
 autoscaling:
   enabled: false
@@ -90,9 +81,6 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
-
 nodeSelector: {}
-
 tolerations: []
-
 affinity: {}
