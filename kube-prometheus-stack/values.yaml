@@ -2693,6 +2693,15 @@ prometheus:
       static_configs:
       - targets:
         - ingress-prometheus.default.svc.cluster.local:80
+    - job_name: app-logs
+      honor_timestamps: true
+      scrape_interval: 1m
+      scrape_timeout: 1m
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+      - targets:
+        - chess-openings:5000
     # - job_name: kube-etcd
     #   kubernetes_sd_configs:
     #     - role: node

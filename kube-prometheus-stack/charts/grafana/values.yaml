@@ -162,7 +162,8 @@ service:
   targetPort: 3000
     # targetPort: 4181 To be used with a proxy extraContainer
   ## Service annotations. Can be templated.
-  annotations: {}
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: "grafana.maciejgroszyk.click"
   labels: {}
   portName: service
   # Adds the appProtocol field to the service. This allows to work with istio protocol selection. Ex: "http" or "tcp"
