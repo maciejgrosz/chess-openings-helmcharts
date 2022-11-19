@@ -6,7 +6,7 @@ image:
   repository: 644435390668.dkr.ecr.eu-west-2.amazonaws.com/maciej_groszyk_chess_nginx
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "3.0.1"
+  tag: "1.0.3"
 configmap: configmap-nginx
 imagePullSecrets: []
 nameOverride: ""
