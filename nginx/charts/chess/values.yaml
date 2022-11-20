@@ -6,7 +6,7 @@ image:
   repository: 644435390668.dkr.ecr.eu-west-2.amazonaws.com/maciej_groszyk_portfolio
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "2.1.0"
+  tag: "3.0.2"
 configmap: app-secrets
 imagePullSecrets: []
 nameOverride: ""
