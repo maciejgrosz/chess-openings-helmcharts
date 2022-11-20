@@ -80,12 +80,7 @@ spec:
               valueFrom:  
                 secretKeyRef:
                   name: {{ .Values.configmap }}
-                  key: MONGODB_PORT
-            - name: REPLICASET
-              valueFrom:  
-                secretKeyRef:
-                  name: {{ .Values.configmap }}
-                  key: REPLICASET                 
+                  key: MONGODB_PORT              
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
